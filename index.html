@@ -1,11 +1,72 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create your account</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    
+  <main class="page">
+    <aside class="intro">
+      
+      
+      <p class="lead">Create a free account to save your work, sync across devices and pick up where you left off.</p>
+    </aside>
+
+    <section class="panel">
+      <form id="signup-form" novalidate>
+        <h2>Create your account</h2>
+        <p class="sub">Already registered? <a href="login.html">Log in</a></p>
+
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <p class="error" id="name-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <p class="error" id="email-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="pw-wrap">
+            <input id="password" name="password" type="password" autocomplete="new-password" required>
+            <button type="button" class="toggle" data-target="password" aria-label="Show password">Show</button>
+          </div>
+          <div class="meter" aria-hidden="true"><span id="meter-bar"></span></div>
+          <p class="hint" id="meter-text">Use at least 8 characters with a number and a capital letter.</p>
+          <p class="error" id="password-error" role="alert"></p>
+        </div>
+
+        <div class="field">
+          <label for="confirm">Confirm password</label>
+          <div class="pw-wrap">
+            <input id="confirm" name="confirm" type="password" autocomplete="new-password" required>
+            <button type="button" class="toggle" data-target="confirm" aria-label="Show password">Show</button>
+          </div>
+          <p class="error" id="confirm-error" role="alert"></p>
+        </div>
+
+        <div class="field check">
+          <input id="terms" name="terms" type="checkbox">
+          <label for="terms">I accept the <a href="#">terms of use</a> and the <a href="#">privacy policy</a></label>
+          <p class="error" id="terms-error" role="alert"></p>
+        </div>
+
+        <button type="submit" class="submit">Create account</button>
+      </form>
+
+      <div id="success" class="success" hidden>
+        <h2>Account created</h2>
+        <p>Welcome, <strong id="success-name"></strong>. Check <strong id="success-email"></strong> to confirm your address.</p>
+      </div>
+    </section>
+  </main>
+  <script src="./index.js"></script>
 </body>
 </html>
